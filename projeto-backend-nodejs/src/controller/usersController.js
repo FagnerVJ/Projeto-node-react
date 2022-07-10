@@ -1,16 +1,7 @@
 import Users from '../models/User.js';
+import bcrypt from 'bcrypt';
 
 class UserController {
-
-    static listarUsers = (req, res) => {
-        Users.find()
-            .then(users => {
-                res.status(200).json(users);
-            })
-            .catch(error => {
-                res.json('Usuários não encontrados', error);
-            })
-    }
 
     static listarUserId = (req, res) => {
         const id = req.params.id
@@ -22,22 +13,7 @@ class UserController {
             }
         })
     }
-
-    static cadastrarUser = (req, res) => {
-        var user = new Users({
-            name: req.body.name,
-            username: req.body.username,
-            password: req.body.password
-        })
-        user.save()
-            .then(users => {
-                res.status(201).send(users.toJSON());
-            })
-            .catch(error => {
-                res.status(500).json('Usuário não encontrado ', error);
-            })
-    }
-
+    
     static atualizarUser = (req, res) => {
         const id = req.params.id
 

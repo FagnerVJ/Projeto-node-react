@@ -27,3 +27,6 @@ collection name - users
 //////////////////////////////////////////////////////////////
 Link que ensina a associar dados entre Schemas https://cursos.alura.com.br/course/nodejs-api-rest-express-mongodb/task/103591
 
+10 - JWT
+https://www.npmjs.com/package/jsonwebtoken
+

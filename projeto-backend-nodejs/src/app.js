@@ -1,6 +1,5 @@
 import express, { response } from "express";
 import db from './config/dbConnect.js'
-import Users from './models/User.js'
 import routes from './routes/index.js'
 
 //importando banco para o app 
