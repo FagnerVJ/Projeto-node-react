@@ -1,14 +1,16 @@
 import express from "express";
-import UserControllerListar from "../controller/userControllerListar.js";
-import UserControllerRegister from "../controller/userControllerRegister.js";
-import UserController from "../controller/usersController.js";
+import UsersControllerListar from "../controller/UsersControllerListar.js";
+import UsersControllerRegister from "../controller/UsersControllerRegister.js";
+import UsersControllerUpdate from "../controller/UsersControllerUpdate.js";
+import UsersControllertListarPorId from "../controller/UsersControllerListarPorId.js";
+import UsersControllerRemove from "../controller/UsersControllerRemove.js";
 
 const router = express.Router();
 
 router
-    .get("/users", UserControllerListar.listarUsers) 
-    .get("/user/:id", UserController.listarUserId)
-    .post("/user", UserControllerRegister.registraUser)
-    .put("/user/:id", UserController.atualizarUser)
-    .delete("/user/:id", UserController.removerUser)
+    .get("/users", UsersControllerListar.listarUsers) 
+    .get("/user/:id", UsersControllertListarPorId.listarUserId)
+    .post("/user", UsersControllerRegister.registraUser)
+    .put("/user/:id", UsersControllerUpdate.atualizarUser)
+    .delete("/user/:id", UsersControllerRemove.removeUser)
 export default router;
